@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>Add Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="TAILWIND2.CSS" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="lg:w-64 bg-gray-600">
+            <div class="py-2">
+                <a href="index.html"><div>
+                    <img src="logo.png" alt="User Avatar" class="w-20 h-20  rounded-full" style="align-content: center;">
+                <h1 class="text-3xl font-bold mb-8 text-center lg:text-center ">Gurukul ERP</h1>
+                </div> </a>
+                
+                <nav class="space-y-2">
+                    <a href="index.html" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-home  fa-x pr-3 " aria-hidden="true"></i>Dashboard</a>
+                    <a href="#admissions" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-graduation-cap  fa-x pr-3 " aria-hidden="true"></i>Admissions</a>
+                    <a href="#students" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-male  fa-x pr-3 " aria-hidden="true"></i>Students</a>
+                    <a href="#fees" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-credit-card  fa-x pr-3 " aria-hidden="true"></i>Fees & Payments</a>
+                    <a href="#timetable" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-book  fa-x pr-3 " aria-hidden="true"></i>Time Table</a>
+                  <div>
+                    <button class="dropdown-btn block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-question-circle-o  fa-x pr-3 " aria-hidden="true"></i>Quiz 
+                        <i class="fa fa-caret-down right-0"></i>
+                      </button>
+                      
+                      <div class="dropdown-container">
+                        <a  class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800" href="add_quiz.html"><i class="fa fa-circle  fa-x pr-3 " aria-hidden="true"></i>Add Questions</a>
+                        <a  class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800" href="question_list.html"><i class="fa fa-circle  fa-x pr-3 " aria-hidden="true"></i>Questions List</a> 
+                        <a  class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800" href="create_quiz.html"><i class="fa fa-circle  fa-x pr-3 " aria-hidden="true"></i>Create Quiz</a>
+                        <a  class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800" href="schedule_quiz.html"><i class="fa fa-circle  fa-x pr-3 " aria-hidden="true"></i>Schedule Quiz</a>
+                        <a  class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800" href="start_question.html"><i class="fa fa-circle  fa-x pr-3 " aria-hidden="true"></i>Start Qui</a>
+               </div>
+                  </div>
+                   
+
+                    <a href="#results" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-pencil-square-o  fa-x pr-3 " aria-hidden="true"></i>Results</a>
+                    <a href="Menu.html" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-users  fa-x pr-3 " aria-hidden="true"></i>Departments</a>
+                    <a href="#notifications" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-commenting-o  fa-x pr-3 " aria-hidden="true"></i>Notifications</a>
+                    <a href="#settings" class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-800"><i class="fa fa-cog  fa-x pr-3 " aria-hidden="true"></i>Settings</a>
+                    <div class="flex items-center space-x-3">
+                    
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- End of Sidebar -->
+          <!-- Main Content -->
+          <div class="flex-1 relative">
+            <!-- Toggle Sidebar Button -->
+            <!-- <button id="toggleSidebar" class="absolute top-0 left-0 w-auto bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 10a2 2 0 100-4 2 2 0 000 4zM9 10a2 2 0 100-4 2 2 0 000 4zM17 10a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+            </button> -->
+            <!-- End of Toggle Sidebar Button -->
+
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="relative top-0 left-0 "></section>
+           <!-- Header -->
+           <header class="bg-gray-600 border-b border-gray-600 py-auto px-auto flex justify-between items-auto">
+            <div class="flex gap-4">
+                <button id="toggleSidebar">
+                    <ion-icon class="text-2xl flex justify-center items-center" name="menu"></ion-icon>
+                </button>
+                <h1 class="text-3xl font-bold">Dashboard</h1>
+                
+            </div>
+            <div class="flex items-center space-x-3">
+                <div class="relative">
+                    <input type="text" placeholder="Search" class="border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors bg-gray-800">
+                    <ion-icon class="absolute right-4 top-3" name="search-outline"></ion-icon>
+                </div>
+                <!-- <div class="relative group">
+                    <button class="text-gray-400 group-hover:text-indigo-500 focus:outline-none focus:text-indigo-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM3 10a7 7 0 1114 0 7 7 0 01-14 0z" />
+                        </svg>
+                    </button>
+                    <div class="hidden bg-gray-800 text-base rounded-lg shadow-md right-0 mt-10 w-36 p-2 group-hover:block">
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Change User</a>
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Sign Out</a>
+                    </div>
+                </div> -->
+                <div class="relative">
+                    <img id="profilepic" src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="User Avatar" class="w-10 h-10 rounded-full transition-transform transform hover:scale-110">
+                    <div id="profilemenu" class="hidden bg-gray-800 text-base rounded-lg shadow-md -left-28 w-36 mt-2 p-2 absolute">
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Change User</a>
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Sign Out</a>
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Account Settings</a>
+                        <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Help</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+              
+
+                <main class="p-6 space-y-6">
+                    <div id="Add Department" class="max-w-md mx-auto bg-gray-800 rounded-lg overflow-hidden md:max-w-xl">
+                        <div class="md:flex">
+                            <div class="w-full px-4 py-8">
+                                <h2 class="text-xl font-semibold mb-4">Add Quiz</h2>
+                                <form ><br>
+                                    <fieldset class="form">
+                                        <div class="mb-4">
+                                            <label class="block text-sm font-medium text-gray-300" for="subject">Subject :</label>
+                                            <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="subject" name="subject">
+                                           </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="question">Question</label>
+                                        <textarea type="text" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" style="padding: 2px;" id="question" name="question"></textarea>
+                                       </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="option1">option 1:</label>
+                                        <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="option1" name="option1">
+                                       </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="option2">option 2:</label>
+                                        <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="option2" name="option2">
+                                       </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="option3">option 3:</label>
+                                        <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="option3" name="option3">
+                                       </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="option4">option 4:</label>
+                                        <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="option4" name="option4">
+                                       </div> <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-300" for="answer">Answer :</label>
+                                        <input class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100" type="text" style="padding: 2px;" id="answer" name="answer">  
+                                       </div> <div class="mt-4"><input  class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" type="submit" value="Submit" >
+                                   </div>
+                        
+                                   
+                                     
+                                    </fieldset>
+                                   </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+            </main>
+        </section>
+    </div>   <script>
+        // JavaScript code for charts
+        // Enrollment Bar Chart
+        var enrollmentCtx = document.getElementById('enrollmentBarChart').getContext('2d');
+        var enrollmentBarChart = new Chart(enrollmentCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Enrollment'],
+                datasets: [{
+                    label: 'Total Enrollment',
+                    data: [1000], // Assuming total enrollment is 1000
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Admissions Bar Chart
+        var admissionsCtx = document.getElementById('admissionsBarChart').getContext('2d');
+        var admissionsBarChart = new Chart(admissionsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Admissions'],
+                datasets: [{
+                    label: 'Total Admissions',
+                    data: [500], // Assuming 500 admissions made
+                    backgroundColor: 'rgba(255, 193, 7, 0.5)',
+                    borderColor: 'rgba(255, 193, 7, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Fees Doughnut Chart
+        var feesCtx = document.getElementById('feesDoughnutChart').getContext('2d');
+        var feesDoughnutChart = new Chart(feesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Received', 'Due'],
+                datasets: [{
+                    label: 'Total Fees & Payments',
+                    data: [150000, 50000], // Assuming ₹150,000 received and ₹50,000 due
+                    backgroundColor: ['rgba(40, 167, 69, 0.5)', 'rgba(220, 53, 69, 0.5)'],
+                    borderColor: ['rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {}
+        });
+
+        // Time Table Line Chart
+        var timeTableCtx = document.getElementById('timeTableLineChart').getContext('2d');
+        var timeTableLineChart = new Chart(timeTableCtx, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' , 'Saturday'],
+                datasets: [{
+                    label: 'Classes Scheduled',
+                    data: [3, 6, 2, 5, 6, 9], // Assuming random classes scheduled every day
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Departments Doughnut Chart
+        var departmentsCtx = document.getElementById('DepartmentsDoughnutChart').getContext('2d');
+        var departmentsDoughnutChart = new Chart(departmentsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Engineering', 'Medical', 'Arts', 'Commerce', 'Science', 'Law'],
+                datasets: [{
+                    label: 'Total Departments',
+                    data: [10, 8, 6, 5, 4, 2], // Assuming total departments for each category
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 205, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {}
+        });
+
+        // Quiz Doughnut Chart
+        var quizCtx = document.getElementById('quizDoughnutChart').getContext('2d');
+        var quizDoughnutChart = new Chart(quizCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Maths', 'Science', 'History', 'Geography', 'Literature', 'Music'],
+                datasets: [{
+                    label: 'Quiz',
+                    data: [20, 15, 10, 8, 5, 2], // Assuming total quizzes for each subject
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 205, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {}
+        });
+
+        // Results Doughnut Chart
+        var resultsCtx = document.getElementById('resultsDoughnutChart').getContext('2d');
+        var resultsDoughnutChart = new Chart(resultsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Pass', 'Fail'],
+                datasets: [{
+                    label: 'Results',
+                    data: [80, 20], // Assuming 80% pass and 20% fail
+                    backgroundColor: ['rgba(40, 167, 69, 0.5)', 'rgba(220, 53, 69, 0.5)'],
+                    borderColor: ['rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {}
+        });
+    </script>
+    
+    <script>
+        // JavaScript to toggle sidebar visibility
+        const toggleButton = document.getElementById('toggleSidebar');
+        const sidebar = document.querySelector('.bg-gray-800');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+
+        // Profile Menubar 
+        const prifilepic = document.getElementById('profilepic');
+        const profilemenu = document.getElementById('profilemenu');
+
+        profilepic.addEventListener('click', () => {
+            profilemenu.classList.toggle("hidden");
+        });
+        
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+                var i;
+                
+                for (i = 0; i < dropdown.length; i++) {
+                  dropdown[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    if (dropdownContent.style.display === "block") {
+                      dropdownContent.style.display = "none";
+                    } else {
+                      dropdownContent.style.display = "block";
+                    }
+                  });
+                }
+    </script>
+    <!-- Ion-icons  -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>  
